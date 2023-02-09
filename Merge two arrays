@@ -1,0 +1,8 @@
+ArrayList<String> listOne = new ArrayList<>(Arrays.asList("a", "b", "c"));
+ArrayList<String> listTwo = new ArrayList<>(Arrays.asList("c", "d", "e"));
+
+List<String> combinedList = Stream.of(listOne, listTwo)
+        .flatMap(x -> x.stream())
+        .collect(Collectors.toList());
+
+System.out.println(combinedList)
